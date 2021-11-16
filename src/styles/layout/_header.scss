@@ -1,0 +1,27 @@
+.site-header {
+  padding: 2rem 0;
+
+  nav {
+    ul {
+      display: flex;
+
+      li {
+        list-style: none;
+
+        &:not(:first-child) {
+          margin-left: 28px;
+        }
+
+        a {
+          font-family: 'Roboto', sans-serif;
+          font-weight: 600;
+          color: #bcbcbc;
+
+          &.active {
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+}

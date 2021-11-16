@@ -1,0 +1,14 @@
+.block-connect {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  > .status {
+    display: inline-block;
+    margin: 2rem 0;
+
+    b {
+      color: #bcbcbc;
+    }
+  }
+}
