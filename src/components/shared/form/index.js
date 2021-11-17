@@ -19,6 +19,7 @@ const Input = ({
           type={type}
           value={value}
           onChange={onChange}
+          className="input input-bordered block w-full focus:ring focus:outline-none"
           placeholder={placeholder}
         />
       </div>

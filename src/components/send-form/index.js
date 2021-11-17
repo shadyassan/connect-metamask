@@ -5,6 +5,7 @@ import { useEffect } from 'react/cjs/react.development';
 import Input from '../shared/form';
 import Button from '../shared/button';
 import ErrorMessage from '../error-message';
+import TxList from '../txlist';
 
 const startPayment = async ({ setError, setTxs, ether, addr }) => {
   try {
@@ -41,13 +42,10 @@ const SendForm = () => {
   const [error, setError] = useState(false);
   const [txs, setTxs] = useState([]);
   const [isValid, setIsValid] = useState(false);
-  // const { account } = useWeb3React();
   const [{ addr, ether }, setFormData] = useState({
     addr: '',
     ether: '',
   });
-
-  console.log('txs; ', txs);
 
   useEffect(() => {
     if (isValidAddress(addr)) {
@@ -73,25 +71,29 @@ const SendForm = () => {
   };
 
   return (
-    <div className="site-form">
-      <h2>Send ETH payment</h2>
+    <div className="site-form credit-card w-full lg:w-1/2 sm:w-auto shadow-lg mx-auto rounded-xl bg-white mt-4 p-6">
+      <h2 className="font-semibold text-gray-700">Send ETH payment</h2>
       <form noValidate onSubmit={handleSubmit}>
-        <Input
-          name="addr"
-          value={addr}
-          onChange={onChangeHandler}
-          placeholder="Recipient Address"
-        />
-        <Input
-          name="ether"
-          value={ether}
-          onChange={onChangeHandler}
-          placeholder="Recipient Amount in ETH"
-        />
+        <div className="my-3">
+          <Input
+            name="addr"
+            value={addr}
+            onChange={onChangeHandler}
+            placeholder="Recipient Address"
+          />
+        </div>
+        <div className="my-3">
+          <Input
+            name="ether"
+            value={ether}
+            onChange={onChangeHandler}
+            placeholder="Recipient Amount in ETH"
+          />
+        </div>
         <Button disabled={!isValid}>Pay Now</Button>
       </form>
-      {isValid ? <div>Address is valid</div> : <div>Address is not valid</div>}
       {error && <ErrorMessage message={error} />}
+      <TxList txs={txs} />
     </div>
   );
 };
