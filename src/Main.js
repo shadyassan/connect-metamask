@@ -7,7 +7,6 @@ import routes from './routes';
 import './styles/Main.scss';
 
 function getLibrary(provider) {
-  console.log('provider: ', provider);
   const library = new Web3Provider(provider);
   library.pollingInterval = 12000;
   return library;
