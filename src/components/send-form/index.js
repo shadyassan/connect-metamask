@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Web3 from 'web3';
 import { ethers } from 'ethers';
+// import { useWeb3React } from '@web3-react/core';
 import Input from '../shared/form';
 import Button from '../shared/button';
 import ErrorMessage from '../error-message';
@@ -25,6 +26,23 @@ const startPayment = async ({ setError, setTxs, ether, addr }) => {
   }
 };
 
+// const sendPayment = async (setError, account, ether, addr) => {
+//   const wei = window.web3.utils.toWei(ether);
+
+//   window.ethereum
+//     .request({
+//       method: 'eth_sendTransaction',
+//       params: [
+//         {
+//           from: account,
+//           to: addr,
+//           value: (+wei).toString(16),
+//         },
+//       ],
+//     })
+//     .catch((e) => console.log(e));
+// };
+
 const isValidAddress = (adr) => {
   try {
     const web3 = new Web3();
@@ -36,6 +54,7 @@ const isValidAddress = (adr) => {
 };
 
 const SendForm = () => {
+  // const { account } = useWeb3React();
   const [error, setError] = useState(false);
   const [txs, setTxs] = useState([]);
   const [isValid, setIsValid] = useState(false);
@@ -54,6 +73,7 @@ const SendForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    // await sendPayment(setError, account, ether, addr);
     await startPayment({
       setError,
       setTxs,
