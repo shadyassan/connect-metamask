@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Web3 from 'web3';
 import { ethers } from 'ethers';
-import { useEffect } from 'react/cjs/react.development';
 import Input from '../shared/form';
 import Button from '../shared/button';
 import ErrorMessage from '../error-message';
