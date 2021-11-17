@@ -2,11 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Button = ({ children, ...rest }) => (
-  <button
-    type="submit"
-    className="btn btn-primary submit-button focus:ring focus:outline-none"
-    {...rest}
-  >
+  <button type="submit" className="btn btn-accent" {...rest}>
     {children}
   </button>
 );
