@@ -5,10 +5,23 @@
 
   > .status {
     display: inline-block;
-    margin: 2rem 0;
+    margin-top: 2rem;
+
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
 
     b {
       color: #bcbcbc;
     }
+  }
+}
+
+.block-balance {
+  display: flex;
+  align-items: center;
+
+  &:not(:last-child) {
+    margin-bottom: 2rem;
   }
 }

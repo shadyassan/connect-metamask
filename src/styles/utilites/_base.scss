@@ -19,9 +19,14 @@ body {
 li {
   list-style-type: none;
 }
+
 h2 {
   font-size: 28px;
   line-height: 1.2;
+
+  &:not(:last-child) {
+    margin-bottom: 1.5rem;
+  }
 }
 
 a {
