@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 
 const Button = ({ children, ...rest }) => (
@@ -12,4 +12,4 @@ Button.propTypes = {
   children: PropTypes.string,
 };
 
-export default Button;
+export default memo(Button);

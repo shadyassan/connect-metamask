@@ -1,9 +1,12 @@
 import React from 'react';
 import SendForm from '../../components/send-form';
+import { AppProvider } from '../../contexts/app.provider';
 
 const Send = () => (
   <section className="section">
-    <SendForm />
+    <AppProvider>
+      <SendForm />
+    </AppProvider>
   </section>
 );
 
